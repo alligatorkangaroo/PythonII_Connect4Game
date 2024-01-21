@@ -28,6 +28,7 @@ class Connect4GUI:
             self.master.destroy()
 
     def draw_board(self):
+        """redraws the gameboard """
         self.canvas.delete("all")
         for row in range(6):
             for col in range(7):
