@@ -20,14 +20,17 @@ class Connect4GUI:
         self.draw_board()
 
     def make_move(self, column):
+        """calls the make_move function of game and then the draw_board function to update the board"""
         self.game.make_move(column)
         self.draw_board()
+        """checks if there is a winner after the move and displays if there is"""
         if self.game.winner is not None:
             winner_text = f"Player {self.game.winner} wins!"
             messagebox.showinfo("Game Over", winner_text)
             self.master.destroy()
 
     def draw_board(self):
+        """draws the game board with instructions from the board object of game"""
         self.canvas.delete("all")
         for row in range(6):
             for col in range(7):
